@@ -88,7 +88,7 @@ export function Skills() {
                   whileHover={{ scale: 1.05 }}
                   className="aspect-square"
                 >
-                  <Card className="h-full border border-gray-800 bg-gray-900/50 hover:border-purple-500/50 transition-all duration-300">
+                  <Card className="h-full bg-gray-900/50 transition-all duration-300">
                     <CardContent className="flex flex-col items-center justify-center h-full p-4 text-center">
                       <div className="w-16 h-16 mb-4 flex items-center justify-center">
                         <img

@@ -34,24 +34,29 @@ export function FAQ() {
   const faqs = [
     {
       question: "What technologies do you work with?",
-      answer: "I mainly work with HTML, CSS, JavaScript, and frameworks like React, Next.js, and Vue. I also have experience using Tailwind CSS, TypeScript, and working with APIs."
+      answer:
+        "I mainly work with HTML, CSS, JavaScript, and frameworks like React, Next.js, and Vue. I also have experience using Tailwind CSS, TypeScript, and working with APIs.",
     },
     {
       question: "Do you work on freelance or remote projects?",
-      answer: "Yes, I'm available for both freelance projects and remote work opportunities. I'm experienced in working with distributed teams and managing projects remotely."
+      answer:
+        "Yes, I'm available for both freelance projects and remote work opportunities. I'm experienced in working with distributed teams and managing projects remotely.",
     },
     {
       question: "Can you convert Figma or Sketch designs into code?",
-      answer: "Absolutely! I specialize in converting design files from Figma, Sketch, Adobe XD, and other design tools into pixel-perfect, responsive code."
+      answer:
+        "Absolutely! I specialize in converting design files from Figma, Sketch, Adobe XD, and other design tools into pixel-perfect, responsive code.",
     },
     {
       question: "Do you collaborate with backend developers or teams?",
-      answer: "Yes, I have extensive experience working with backend developers and cross-functional teams. I'm comfortable with API integration and collaborative development workflows."
+      answer:
+        "Yes, I have extensive experience working with backend developers and cross-functional teams. I'm comfortable with API integration and collaborative development workflows.",
     },
     {
       question: "Are you available for full-time roles?",
-      answer: "I'm open to discussing full-time opportunities that align with my skills and interests. Feel free to reach out to discuss potential collaborations."
-    }
+      answer:
+        "I'm open to discussing full-time opportunities that align with my skills and interests. Feel free to reach out to discuss potential collaborations.",
+    },
   ];
 
   return (
@@ -68,17 +73,14 @@ export function FAQ() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Got questions? Here are the answers to the ones we get asked the most.
+              Got questions? Here are the answers to the ones we get asked the
+              most.
             </p>
           </motion.div>
 
           <div className="space-y-8">
             {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="border-b border-gray-800 pb-8 last:border-b-0"
-              >
+              <motion.div key={index} variants={itemVariants} className="pb-8">
                 <button
                   onClick={() => setOpenFAQ(openFAQ === index ? -1 : index)}
                   className="flex items-start space-x-4 w-full text-left"
@@ -88,12 +90,12 @@ export function FAQ() {
                   ) : (
                     <ChevronDown className="w-6 h-6 text-white mt-1 flex-shrink-0" />
                   )}
-                  
+
                   <div className="flex-1">
                     <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3">
                       {faq.question}
                     </h3>
-                    
+
                     {openFAQ === index && (
                       <motion.p
                         initial={{ opacity: 0, height: 0 }}

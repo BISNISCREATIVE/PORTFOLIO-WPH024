@@ -37,8 +37,8 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-white/10"
-          : "bg-gradient-to-r from-purple-900/20 to-purple-600/20 backdrop-blur-sm"
+          ? "bg-black/80 backdrop-blur-md"
+          : "bg-gradient-to-r from-purple-900/20 to-purple-600/20 backdrop-blur-sm",
       )}
     >
       <div className="container mx-auto px-4 py-4">
@@ -49,15 +49,26 @@ export function Header() {
             transition={{ delay: 0.2 }}
             className="flex items-center space-x-3"
           >
-            <svg className="w-11 h-11 text-white" viewBox="0 0 126 126" fill="currentColor">
+            <motion.svg
+              className="w-11 h-11 text-white"
+              viewBox="0 0 126 126"
+              fill="currentColor"
+              animate={{ rotate: [0, 360, 0, -360, 0] }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+                times: [0, 0.25, 0.5, 0.75, 1],
+              }}
+            >
               <path d="M63 126C61.176 66.3151 59.6849 64.8333 0 63C59.6849 61.176 61.1669 59.6849 63 0C64.8239 59.6849 66.3151 61.1669 126 63C66.3151 64.8333 64.8333 66.2968 63 126Z" />
-            </svg>
+            </motion.svg>
             <span className="text-xl font-bold text-white">Punjung</span>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <nav className="flex space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 border border-white/20">
+            <nav className="flex space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.name}
@@ -74,13 +85,17 @@ export function Header() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button 
+            <Button
               className="hidden md:block bg-white text-black hover:bg-white/90 px-6 py-2"
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .querySelector("#contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Get in Touch
             </Button>
-            
+
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
@@ -99,7 +114,7 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4 bg-white/10 backdrop-blur-sm rounded-lg px-4 border border-white/20"
+            className="md:hidden mt-4 pb-4 bg-white/10 backdrop-blur-sm rounded-lg px-4"
           >
             {navItems.map((item, index) => (
               <motion.button
@@ -113,11 +128,13 @@ export function Header() {
                 {item.name}
               </motion.button>
             ))}
-            <div className="border-t border-white/20 mt-2 pt-2">
-              <Button 
+            <div className="mt-2 pt-2">
+              <Button
                 className="w-full bg-white text-black hover:bg-white/90"
                 onClick={() => {
-                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .querySelector("#contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
                   setIsMenuOpen(false);
                 }}
               >

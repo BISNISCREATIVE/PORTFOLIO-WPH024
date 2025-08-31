@@ -106,7 +106,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    /* removed border for all elements */
   }
 
   body {
@@ -131,5 +131,9 @@
 
 /* Testimonial card background gradient */
 .testimonial-card-bg {
-  background: radial-gradient(59.21% 50.26% at 13.99% -1.51%, #34144C 0%, rgba(52, 20, 76, 0.00) 100%);
+  background: radial-gradient(
+    59.21% 50.26% at 13.99% -1.51%,
+    #34144c 0%,
+    rgba(52, 20, 76, 0) 100%
+  );
 }
